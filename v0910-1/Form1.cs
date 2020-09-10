@@ -31,13 +31,38 @@ namespace v0910_1
                 labels[i].Text = "★";
                 Controls.Add(labels[i]);
 
-                
+                labels[i].Left = rand.Next(ClientSize.Width - labels[i].Width);
+                labels[i].Top = rand.Next(ClientSize.Height - labels[i].Height);
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            for (int i = 0; i < 3; i++)
+            {
+                labels[i].Left += vx[i];
+                labels[i].Top += vy[i];
+            }
 
+            for (int i = 0; i < 3; i++)
+            {
+                if (labels[i].Left < 0)
+                {
+                    vx[i] = Math.Abs(vx[0]);
+                }
+                if (labels[i].Top > 0)
+                {
+                    vy[i] = Math.Abs(vy[0]);
+                }
+                if (labels[i].Right < 0)
+                {
+                    vx[i] = -Math.Abs(vx[0]);
+                }
+                if (labels[i]. > 0)
+                {
+                    vy[i] = -Math.Abs(vy[0]);
+                }
+            }
         }
     }
 }
