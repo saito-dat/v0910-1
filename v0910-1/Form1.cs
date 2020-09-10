@@ -54,11 +54,11 @@ namespace v0910_1
                 {
                     vy[i] = Math.Abs(vy[0]);
                 }
-                if (labels[i].Right < ClientSize.Height)
+                if (labels[i].Right < ClientSize.Width)
                 {
                     vx[i] = -Math.Abs(vx[0]);
                 }
-                if (labels[i].Bottom > ClientSize.Width)
+                if (labels[i].Bottom > ClientSize.Height)
                 {
                     vy[i] = -Math.Abs(vy[0]);
                 }
